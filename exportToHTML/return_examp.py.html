@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>return_examp.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+return_examp.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">random</span>
+
+
+<span class="s1">start </span><span class="s2">= </span><span class="s1">input</span><span class="s2">(</span><span class="s3">'Ты запустил игру &quot;Камень, ножницы, бумага&quot;. Хотите поиграть? (Вводите + или -): '</span><span class="s2">)</span>
+
+<span class="s0">if </span><span class="s1">start </span><span class="s2">== </span><span class="s3">'+'</span><span class="s2">:</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">'Загрузка...'</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Загрузка завершена! Начинаем!&quot;</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">'Если захотите закончить вводите &quot;-&quot;.'</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">'Если захотите узнать счёт вводите &quot;с&quot;.'</span><span class="s2">)</span>
+    <span class="s1">user_ball </span><span class="s2">= </span><span class="s4">0</span>
+    <span class="s1">rand_ball </span><span class="s2">= </span><span class="s4">0</span>
+    <span class="s0">while True</span><span class="s2">:</span>
+        <span class="s1">user </span><span class="s2">= </span><span class="s1">input</span><span class="s2">(</span><span class="s3">&quot;Камень, ножницы или бумага? (Вводите к, н или б): &quot;</span><span class="s2">)</span>
+        <span class="s1">list_play </span><span class="s2">= [</span><span class="s3">'к'</span><span class="s2">, </span><span class="s3">'н'</span><span class="s2">, </span><span class="s3">'б'</span><span class="s2">]</span>
+        <span class="s0">if </span><span class="s1">user </span><span class="s0">in </span><span class="s1">list_play</span><span class="s2">:</span>
+            <span class="s1">rand </span><span class="s2">= </span><span class="s1">random</span><span class="s2">.</span><span class="s1">choice</span><span class="s2">(</span><span class="s1">list_play</span><span class="s2">)</span>
+            <span class="s1">print</span><span class="s2">(</span><span class="s1">rand</span><span class="s2">)</span>
+
+            <span class="s0">if </span><span class="s1">rand </span><span class="s2">== </span><span class="s3">'к' </span><span class="s0">and </span><span class="s1">user </span><span class="s2">== </span><span class="s3">'н'</span><span class="s2">:</span>
+                <span class="s1">rand_ball </span><span class="s2">+= </span><span class="s4">1</span>
+            <span class="s0">if </span><span class="s1">rand </span><span class="s2">== </span><span class="s3">'к' </span><span class="s0">and </span><span class="s1">user </span><span class="s2">== </span><span class="s3">'б'</span><span class="s2">:</span>
+                <span class="s1">user_ball </span><span class="s2">+= </span><span class="s4">1</span>
+            <span class="s0">if </span><span class="s1">rand </span><span class="s2">== </span><span class="s3">'н' </span><span class="s0">and </span><span class="s1">user </span><span class="s2">== </span><span class="s3">'к'</span><span class="s2">:</span>
+                <span class="s1">user_ball </span><span class="s2">+= </span><span class="s4">1</span>
+            <span class="s0">if </span><span class="s1">rand </span><span class="s2">== </span><span class="s3">'н' </span><span class="s0">and </span><span class="s1">user </span><span class="s2">== </span><span class="s3">'б'</span><span class="s2">:</span>
+                <span class="s1">rand_ball </span><span class="s2">+= </span><span class="s4">1</span>
+            <span class="s0">if </span><span class="s1">rand </span><span class="s2">== </span><span class="s3">'б' </span><span class="s0">and </span><span class="s1">user </span><span class="s2">== </span><span class="s3">'н'</span><span class="s2">:</span>
+                <span class="s1">user_ball </span><span class="s2">+= </span><span class="s4">1</span>
+            <span class="s0">if </span><span class="s1">rand </span><span class="s2">== </span><span class="s3">'б' </span><span class="s0">and </span><span class="s1">user </span><span class="s2">== </span><span class="s3">'к'</span><span class="s2">:</span>
+                <span class="s1">rand_ball </span><span class="s2">+= </span><span class="s4">1</span>
+        <span class="s0">elif </span><span class="s1">user </span><span class="s2">== </span><span class="s3">'с'</span><span class="s2">:</span>
+            <span class="s1">print</span><span class="s2">(</span><span class="s3">'Ваши баллы - '</span><span class="s2">, </span><span class="s1">user_ball</span><span class="s2">, </span><span class="s3">'. Баллы вашего соперника - '</span><span class="s2">, </span><span class="s1">rand_ball</span><span class="s2">, </span><span class="s3">&quot;.&quot;</span><span class="s2">)</span>
+        <span class="s0">elif </span><span class="s1">user </span><span class="s2">== </span><span class="s3">'-'</span><span class="s2">:</span>
+            <span class="s1">print</span><span class="s2">(</span><span class="s3">'Ваши баллы - '</span><span class="s2">, </span><span class="s1">user_ball</span><span class="s2">, </span><span class="s3">'. Баллы вашего соперника - '</span><span class="s2">, </span><span class="s1">rand_ball</span><span class="s2">, </span><span class="s3">&quot;.&quot;</span><span class="s2">)</span>
+            <span class="s1">print</span><span class="s2">(</span><span class="s3">'Конец игры! Заходите ещё!'</span><span class="s2">)</span>
+            <span class="s0">break</span>
+        <span class="s0">else</span><span class="s2">:</span>
+            <span class="s1">print</span><span class="s2">(</span><span class="s3">'Вводите к, н или б'</span><span class="s2">)</span>
+
+
+<span class="s0">if </span><span class="s1">start </span><span class="s2">== </span><span class="s3">'-'</span><span class="s2">:</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">'Жаль... :('</span><span class="s2">)</span>
+<span class="s0">else</span><span class="s2">:</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s3">'капец ты конечно лентяй, но я тебя всё равно люблю :)'</span><span class="s2">)</span></pre>
+</body>
+</html>
